@@ -5,7 +5,7 @@ import {
   signInWithPopup,
   getAuth,
 } from "firebase/auth";
-import { auth as firebaseAuth, provider } from "../../components/Audifikatsiya";
+import { auth, auth as firebaseAuth, provider } from "../../components/Audifikatsiya";
 import Hom from "../Home/Home";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
@@ -21,7 +21,7 @@ const SignIn = () => {
   };
 
   const loginWithGoogle = () => {
-    signInWithPopup(firebaseAuth, provider)
+    signInWithPopup(auth, provider)
       .then((data) => {
         setUserEmail(data.user.email);
       })
